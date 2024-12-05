@@ -20,6 +20,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <!-- Background Audio -->
+  <audio id="background-audio" src="audio.mp3" loop></audio>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioElement = document.getElementById('background-audio');
+        let isScrolling;
+        const playAudio = () => {
+            audioElement.play().catch(err => {
+                console.warn('Failed to autoplay audio:', err);
+            });
+        };
+        const pauseAudio = () => {
+            audioElement.pause();
+        };
+        window.addEventListener('scroll', () => {
+            playAudio();
+            clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                pauseAudio();
+            }, 100);
+        });
+    });
+  </script>
+  
   <div class="progress"></div>
   <nav id="desktop-nav">
     <div class="logo">Raghav Gupta</div>
