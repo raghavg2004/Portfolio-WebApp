@@ -1,0 +1,157 @@
+/* Basic reset and styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    text-align: center;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #121212;
+    background-color: #1db954;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #1ed760;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Make sure it's on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1db954;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #1db954;
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #1ed760;
+}
+
+/* Service tiles styling */
+.service-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.selected {
+    background-color: #f0f0f0; /* or any color that shows selection */
+    border: 2px solid #00ff1e;
+}
+
+.service-tile {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.service-tile:hover {
+    background-color: #1db954;
+    transform: scale(1.05);
+}
+
+.service-tile.selected {
+    background-color: #1db954;
+    color: #121212;
+}
+
+/* Responsive modal content */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
