@@ -25,8 +25,8 @@
 }
 
 .tile img {
-    width: 80%; /* Responsive size for the icon inside the tile */
-    height: 80%;
+    width: 90%; /* Responsive size for the icon inside the tile */
+    height: 90%;
     object-fit: contain; /* Maintain aspect ratio of the image */
     backface-visibility: hidden;
 }
