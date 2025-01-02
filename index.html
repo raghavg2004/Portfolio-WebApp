@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raghav Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="tiles_styles.css"/>
   <link rel="stylesheet" href="mediaqueries.css"/>
   <link rel="stylesheet" href="scroll.css"/>
   <link rel="stylesheet" href="service.css"/>
@@ -169,140 +170,15 @@
       onclick="location.href='#experience'"
     />
   </section>
+
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Skills</h1>
     <div class="experience-details-container">
       <div class="about-containers">
         <div class="details-container">
-          <h2 class="experience-sub-title">Web Development</h2>
           <div class="article-container">
-            <article>
-              <img
-                src="./assets/html.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>HTML</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/css.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>CSS</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/javascript.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/github.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Git</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/bootstrap_tailwind.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>BootStrap & Tailwind</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/my_sql.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>MySQL</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/vercel.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Vercel</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Android Development</h2>
-          <div class="article-container">
-            <article>
-              <img
-                src="./assets/kotlin.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Kotlin</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/dart.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Dart</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/flutter.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Flutter</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img
-                src="./assets/flutter_flow.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <div>
-                <h3>Flutter Flow</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
+              <div id="tile-container"></div>
           </div>
         </div>
       </div>
@@ -314,7 +190,6 @@
       onclick="location.href='#service'"
     />
   </section>
-
 
 <!--=================== services ====================-->
 <section id="service" class="section service">
@@ -352,9 +227,6 @@
     </div>
   </div>
 </section>
-
-
-
 <!-- Dialog Box with Form -->
 <div id="contactModal" class="modal" style="display: none;">
 <div class="modal-content">
@@ -557,6 +429,7 @@ function validateServiceSelection() {
 
   </footer>
   <script src="script.js"></script>
+  <script src="tiles_script.js"></script>
   <script src="scroll.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
