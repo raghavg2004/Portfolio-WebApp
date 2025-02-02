@@ -88,7 +88,7 @@
       <div class="btn-container">
         <button
           class="btn btn-color-2"
-          onclick="location.href='https://drive.google.com/file/d/16kMDhMYas_ifunctSNOSc25Sv7YitRA1/view?usp=sharing'">
+          onclick="location.href='https://drive.google.com/file/d/1-1FJVIcUseZVgkXm2KPK5BFSms9LX9eB/view?usp=drivesdk'">
           Download Resume
         </button>
         <button class="btn btn-color-1"
@@ -108,6 +108,12 @@
           alt="My Github profile"
           class="icon"
           onclick="location.href='https://github.com/raghavg2004'"
+        />
+        <img
+          src="./assets/google.png"
+          alt="My Github profile"
+          class="icon"
+          onclick="location.href='https://play.google.com/store/apps/dev?id=8151461645326615830'"
         />
       </div>
     </>
@@ -177,8 +183,44 @@
       onclick="location.href='#service'"
     />
   </section>
+  <!--=================== services ====================-->
+<section id="service" class="section service">
+  <div class="container">
+    <p class="section__text__p1">Services</p>
+    <h1 class="title">What I do</h1>
+    <div class="d-grid service__wrapper">
+      <div class="details-container color-container">
+        <div class="service__card" onclick="window.location.href='https://dhorizon.vercel.app/'">
+          <div class="service__icon">
+            <i class="ri-layout-4-fill"></i>
+          </div>
+          <h3 class="service__title">Android Development</h3>
+          <p class="service__link">"Providing professional Android development services to help bring your app ideas to life. Specializing in custom, user-friendly, and high-performance mobile solutions tailored to your needs."</p>
+        </div>
+      </div>
+      <div class="details-container color-container">
+        <div class="service__card" onclick="window.location.href='https://dhorizon.vercel.app/'">
+          <div class="service__icon">
+            <i class="ri-code-s-slash-line"></i>
+          </div>
+          <h3 class="service__title">Web Development</h3>
+          <p class="service__link">"Offering expert web development services to create engaging and responsive websites. Specializing in custom solutions that enhance user experience and drive business success."</p>
+        </div>
+      </div>
+      <div class="details-container color-container">
+        <div class="service__card" onclick="window.location.href='https://dhorizon.vercel.app/'">
+          <div class="service__icon">
+            <i class="ri-pen-nib-fill"></i>
+          </div>
+          <h3 class="service__title">Consultation</h3>
+          <p class="service__link">"Providing expert consultation services to guide businesses in technology adoption, project planning, and best development practices. Empowering clients to make informed decisions that drive efficiency and innovation."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!--=================== services ====================-->
+<!--=================== services ====================
 <section id="service" class="section service">
   <div class="container">
     <p class="section__text__p1">Services</p>
@@ -213,8 +255,8 @@
       </div>
     </div>
   </div>
-</section>
-<!-- Dialog Box with Form -->
+</section>-->
+<!-- Dialog Box with Form
 <div id="contactModal" class="modal" style="display: none;">
 <div class="modal-content">
     <span id="closeModalButton" class="close" onclick="closeModal()">&times;</span>
@@ -234,7 +276,6 @@
         
         <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
         <input action="?" type="hidden" name="redirect" value="https://raghavg.vercel.app">
-        <!--<div class="g-recaptcha" data-sitekey="6Lc4QoAqAAAAAK4KHu8snJrtsD6D8Oq1qgbYJm6Y"></div>-->
         <button type="submit" class="submit-button">Submit</button>
     </form>
 </div>
@@ -262,7 +303,7 @@ function validateServiceSelection() {
     return true;
 }
 </script>
-
+-->
 
   <!--Projects-->
   <section id="projects">
@@ -457,8 +498,13 @@ function validateServiceSelection() {
         </ul>
       </div>
     </nav>
-    <h6><p>Copyright &#169; 2025 Raghav Gupta. All Rights Reserved.</p></h6>
-
+    <!--<h6><p>Copyright &#169; 2025 Raghav Gupta. All Rights Reserved.</p></h6>-->
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Raghav Gupta.</strong> <span>All Rights Reserved</span> <span id="current-year"></span></p>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </div>
   </footer>
   <script src="script.js"></script>
   <script src="tiles_script.js"></script>
