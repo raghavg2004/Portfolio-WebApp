@@ -7,10 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raghav Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="tiles_styles.css"/>
-  <link rel="stylesheet" href="mediaqueries.css"/>
-  <link rel="stylesheet" href="scroll.css"/>
-  <link rel="stylesheet" href="service.css"/>
   <link rel="stylesheet" href="formstyle.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +42,41 @@
     });
   </script> -->
   
-  <div class="progress"></div>
+  <div class="progress">
+    <style>body {
+    padding: 0;
+    margin: 0;
+    min-height: 500vh;
+    animation: body 1s linear;
+}
+.progress {
+    height: 3px;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: progress 1s linear;
+}
+@keyframes progress {
+    to {
+        background-color: rgb(255, 20, 20);
+        width: 100%;
+       }
+}
+:root * {
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+</style>
+    <script>
+      window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+  }, false);
+    </script>
+  </div>
   <nav id="desktop-nav">
     <div class="logo">Raghav Gupta</div>
     <div>
@@ -182,6 +212,94 @@
       class="icon arrow"
       onclick="location.href='#service'"
     />
+    <script>const colors = [
+    '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A',
+    '#98D8C8', '#F06292', '#AED581', '#FFD54F',
+    '#81D4FA', '#FFB74D', '#9575CD', '#4DB6AC'
+];
+
+const images = [
+    
+    './assets/image13.jpg', './assets/image15.jpg', './assets/image9.jpg', './assets/image3.jpg',
+    './assets/image5.jpg', './assets/image17.jpg', './assets/image11.jpg', './assets/image14.jpg',
+    './assets/image1.jpg', './assets/image2.jpg', './assets/image8.jpg', './assets/image4.jpg',
+    './assets/image7.jpg', './assets/image12.jpg', './assets/image6.jpg', './assets/image16.jpg'
+];
+
+function createTiles() {
+    const container = document.getElementById('tile-container');
+    container.style.gridTemplateColumns = 'repeat(4, 1fr)'; // Enforce 4 columns in the grid
+
+    // Loop through images and create tiles
+    images.forEach((imageSrc) => {
+        const tile = createTile(imageSrc);
+        container.appendChild(tile);
+    });
+
+    // Ensure the container is responsive
+    window.addEventListener('resize', adjustTileSize);
+    adjustTileSize(); // Initial adjustment
+}
+
+function createTile(imageSrc) {
+    const tile = document.createElement('div');
+    tile.className = 'tile';
+
+    const frontImg = document.createElement('img');
+    frontImg.src = imageSrc;
+    frontImg.alt = 'Tile Image';
+
+    // Random neon color glow effect with smaller intensity and spread
+    tile.addEventListener('mouseenter', function () {
+        const randomColor = generateRandomNeonColor();
+        const glowIntensity = Math.random() * 10 + 5; // Smaller glow spread
+        const glowSpread = Math.random() * 5 + 50; // Smaller glow blur
+
+        tile.style.boxShadow = `0 0 ${glowSpread}px ${glowIntensity}px ${randomColor}, 
+                                0 0 ${glowSpread * 1.5}px ${glowIntensity}px ${randomColor}`; // Dynamic neon effect
+    });
+
+    tile.addEventListener('mouseleave', function () {
+        // Set a delayed reset to make the effect last for 3 seconds
+        setTimeout(() => {
+            tile.style.boxShadow = 'none'; /* Remove the glow after 3 seconds */
+        }, 1500);
+    });
+
+    tile.appendChild(frontImg);
+
+    return tile;
+}
+
+// Function to generate random neon colors dynamically
+function generateRandomNeonColor() {
+    const hue = Math.floor(Math.random() * 360); // Random hue between 0 and 360
+    const saturation = Math.floor(Math.random() * 60 + 40); // Random saturation (between 40 and 100)
+    const lightness = Math.floor(Math.random() * 40 + 40); // Random lightness (between 40 and 80)
+
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`; // Neon color with hsl format
+}
+
+// Function to adjust tile size based on screen size
+function adjustTileSize() {
+    const container = document.getElementById('tile-container');
+    const tileWidth = container.offsetWidth / 4 - 10; // Calculate width based on grid and gap
+    const tiles = document.querySelectorAll('.tile');
+
+    tiles.forEach(tile => {
+        tile.style.width = `${tileWidth}px`;
+        tile.style.height = `${tileWidth}px`;
+    });
+
+    const images = document.querySelectorAll('.tile img');
+    images.forEach(img => {
+        img.style.width = '80%'; // Proportionally adjust icon size
+        img.style.height = '80%';
+    });
+}
+
+createTiles();
+</script>
   </section>
   
   <!--=================== services ====================-->
@@ -303,7 +421,7 @@ function validateServiceSelection() {
     }
     return true;
 }
-</script>
+</>
 -->
 
   <!--Projects-->
@@ -548,12 +666,10 @@ function validateServiceSelection() {
     </div>
   </footer>
   <script src="script.js"></script>
-  <script src="tiles_script.js"></script>
-  <script src="scroll.js"></script>
+  <script src="formscript.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="formscript.js"></script>
+
   <script>
       var typing = new Typed(".text", {
           strings: ["Android Developer", "Web Developer", "Freelancer"],
