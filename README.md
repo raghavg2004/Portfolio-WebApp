@@ -6,4 +6,4 @@ Implemented
 2) CSS
 3) Javascript
 
-Take a look at live version: https://raghavg.vercel.app/ or at https://seo-raghav.vercel.app/
+Take a look at live version: https://raghavg.vercel.app/ OR https://seo-raghav.vercel.app/
